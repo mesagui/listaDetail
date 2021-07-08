@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.listaapp.DetailContactoActivity;
@@ -71,8 +70,6 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
                 //seteamos los atributos de cada clase
                 intent.putExtra("nombre", contacto.Nombre);
                 intent.putExtra("numero", contacto.Numero);
-                intent.putExtra("direccion", contacto.Direccion);
-                intent.putExtra("email", contacto.Email);
 
                 view.getContext().startActivity(intent);//empieza la actividad con el intent
 
@@ -86,8 +83,9 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
 
     @Override
     public int getItemCount() {
-        return contactos.size(); //cantidad cuenta
-    }
+        return contactos.size();
+    }//cantidad cuenta
+
 
     public class ContactoViewHolder extends RecyclerView.ViewHolder{
 
@@ -95,5 +93,6 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
             super(itemView);
         }
     }
+
 
 }
